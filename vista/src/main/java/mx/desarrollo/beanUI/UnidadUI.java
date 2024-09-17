@@ -18,6 +18,9 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import mx.desarrollo.entidad.Profesor;
 import mx.desarrollo.entidad.UnidadDeAprendizaje;
+import static mx.desarrollo.entidad.UnidadDeAprendizaje_.horasClase;
+import static mx.desarrollo.entidad.UnidadDeAprendizaje_.horasLaboratorio;
+import static mx.desarrollo.entidad.UnidadDeAprendizaje_.horasTaller;
 import mx.desarrollo.helper.ProfesorHelper;
 import mx.desarrollo.helper.UnidadHelper;
 
@@ -115,7 +118,7 @@ public class UnidadUI {
     }
     
     public void guardarProfesor() {
-       profesorhelper.guardarProfesor(prof);
+       profesorhelper.saveProfesor(prof);
        obtenerProfesDeBD();
     }
     

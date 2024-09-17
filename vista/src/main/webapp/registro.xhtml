@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <p:toolbar>
+            <p:toolbarGroup>
+                <p:commandButton value="Registrar Nuevo Profesor" actionListener="#{profesorUI.prof()}"
+                    update=":dialogs:manage-product-content" oncomplete="PF('manageProductDialog').show()"
+                    styleClass="ui-button-success" style="margin-right: .5rem">
+                    <p:resetInput target=":dialogs:manage-product-content" />
+                </p:commandButton>
+
+            </p:toolbarGroup>
+        </p:toolbar>
+        
+        <h:form id="dialogs" >
+        <p:dialog header="PROFESOR" showEffect="fade" modal="true" widgetVar="manageProductDialog"
+            responsive="true">
+            <p:outputPanel id="manage-product-content" class="ui-fluid">
+                 <p:outputPanel>
+                    <div class="field">
+                        <p:outputLabel >Nombre</p:outputLabel>
+                        <p:inputText id="name" value="#{profesorUI.prof.nombre}" required="true" style="text-transform:uppercase;"/>
+                    </div>
+                    <div class="field"> 
+                        <p:outputLabel>Apellidos</p:outputLabel>
+                        <p:inputText id="ap" value="#{profesorUI.prof.apellido}" required="true" style="text-transform:uppercase;" />
+                    </div>
+                    <div class="field">
+                        <p:outputLabel >RFC</p:outputLabel>
+                        <p:inputText id="rfc" maxlength="13" value="#{profesorUI.prof.rfc}" required="true" style="text-transform:uppercase;"/>
+                    </div>
+                     
+                     <div class="card">
+
+            </div>
+                                 
+                </p:outputPanel>
+            </p:outputPanel>
+
+            <f:facet name="footer">
+                <p:commandButton value="Guardar informacion" actionListener="#{profesorUI.saveProfesor()}"
+                    update="manage-product-content" process="manage-product-content @this" onclick="PF('dtProfesores').show()" />
+                <p:commandButton value="Cancelar" onclick="PF('manageProductDialog').hide()"
+                    update="manage-product-content" process="manage-product-content @this" class="ui-button-secondary" type="button" />
+            </f:facet>
+        </p:dialog>
+          
+
+    </h:form>
+    </h:body>
+</html>

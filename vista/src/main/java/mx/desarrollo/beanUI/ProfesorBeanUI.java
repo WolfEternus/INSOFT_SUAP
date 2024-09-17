@@ -115,7 +115,7 @@ public class ProfesorBeanUI {
     }
     
     
-   public void guardarProfesor() {
+   public void saveProfesor() {
     // Validar que el RFC tenga exactamente 13 caracteres
     if (prof.getRfc() == null || prof.getRfc().length() != 13) {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", "El RFC debe contener exactamente 13 caracteres."));
@@ -128,7 +128,7 @@ public class ProfesorBeanUI {
         actualizarProfesor();
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Información del profesor actualizada"));
     } else {
-        profesorhelper.guardarProfesor(prof);
+        profesorhelper.saveProfesor(prof);
         guardarUnidades();
         obtenerProfesDeBD();
         FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Éxito", "El profesor se ha registrado correctamente.");
