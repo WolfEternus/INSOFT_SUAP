@@ -32,7 +32,6 @@ and open the template in the editor.
 
         </p:toolbar>
         
-<<<<<<< HEAD
         <p:dataTable id="dt-profesores" widgetVar="dtProfesores" var="profesor" value="#{profesorUI.listaprofesor}"
                      reflow="true" styleClass="products-table" emptyMessage="No hay registros de profesores"
             rowKey="#{profesor.idProfesor}" paginator="true" rows="10" rowSelectMode="add" paginatorPosition="bottom">
@@ -61,11 +60,30 @@ and open the template in the editor.
                 <h:outputText value="#{profesor.rfc}" style="text-transform:uppercase;"/>
             </p:column>
 
+                
+                <p:column>
+                <p:commandButton icon="pi pi-pencil" update=":dialogs:manage-product-content-p"
+                    oncomplete="PF('manageProductDialogP').show()"
+                    styleClass="edit-button rounded-button ui-button-success" style="text-align: center" process="@this">
+                    <f:setPropertyActionListener value="#{profesor}" target="#{profesorUI.prof}" />
+                    <p:resetInput target=":dialogs:manage-product-content" />
+                </p:commandButton>
+                <p:commandButton class="ui-button-warning rounded-button" icon="pi pi-trash"
+                                 process="@this"
+                                 oncomplete="PF('deleteProductDialog').show()">
+                    <f:setPropertyActionListener value="#{profesor}" target="#{profesorUI.prof}" />
+                </p:commandButton>
+            </p:column>
+
             </div>
         </p:dataTable>
-=======
+
+
+            </div>
+        </p:dataTable>
+
         <!-- Aqui va la tabla de la consulta-->
->>>>>>> d2ed6ea74b6b2568c40961754618cbbbb7c215af
+
         
         
         <h:form id="dialogs">
@@ -136,8 +154,10 @@ and open the template in the editor.
         </p:dialog>
                 </h:form>
     </body>
-<<<<<<< HEAD
+
 </html>
-=======
+
 </html>
->>>>>>> d2ed6ea74b6b2568c40961754618cbbbb7c215af
+
+</html>
+
