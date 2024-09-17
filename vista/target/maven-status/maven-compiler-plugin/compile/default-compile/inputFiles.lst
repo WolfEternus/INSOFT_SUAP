@@ -1,6 +1,15 @@
-C:\Users\elcaq\Documents\NetBeansProjects\DSExamen\vista\src\main\java\mx\desarrollo\beanUI\UnidadUI.java
-C:\Users\elcaq\Documents\NetBeansProjects\DSExamen\vista\src\main\java\mx\desarrollo\helper\LoginHelper.java
-C:\Users\elcaq\Documents\NetBeansProjects\DSExamen\vista\src\main\java\mx\desarrollo\helper\ProfesorHelper.java
-C:\Users\elcaq\Documents\NetBeansProjects\DSExamen\vista\src\main\java\mx\desarrollo\beanUI\ProfesorBeanUI.java
-C:\Users\elcaq\Documents\NetBeansProjects\DSExamen\vista\src\main\java\mx\desarrollo\beanUI\LoginBeanUI.java
-C:\Users\elcaq\Documents\NetBeansProjects\DSExamen\vista\src\main\java\mx\desarrollo\helper\UnidadHelper.java
+<<<<<<< HEAD
+C:\Users\elcaq\Documents\NetBeansProjects\INSOFT_SUAP\vista\src\main\java\mx\desarrollo\beanUI\LoginBeanUI.java
+C:\Users\elcaq\Documents\NetBeansProjects\INSOFT_SUAP\vista\src\main\java\mx\desarrollo\helper\UnidadHelper.java
+C:\Users\elcaq\Documents\NetBeansProjects\INSOFT_SUAP\vista\src\main\java\mx\desarrollo\beanUI\UnidadUI.java
+C:\Users\elcaq\Documents\NetBeansProjects\INSOFT_SUAP\vista\src\main\java\mx\desarrollo\beanUI\ProfesorBeanUI.java
+C:\Users\elcaq\Documents\NetBeansProjects\INSOFT_SUAP\vista\src\main\java\mx\desarrollo\helper\LoginHelper.java
+C:\Users\elcaq\Documents\NetBeansProjects\INSOFT_SUAP\vista\src\main\java\mx\desarrollo\helper\ProfesorHelper.java
+=======
+C:\Users\Andrew\Documents\INSOFT_SUAP\vista\src\main\java\mx\desarrollo\beanUI\UnidadUI.java
+C:\Users\Andrew\Documents\INSOFT_SUAP\vista\src\main\java\mx\desarrollo\beanUI\LoginBeanUI.java
+C:\Users\Andrew\Documents\INSOFT_SUAP\vista\src\main\java\mx\desarrollo\helper\UnidadHelper.java
+C:\Users\Andrew\Documents\INSOFT_SUAP\vista\src\main\java\mx\desarrollo\helper\LoginHelper.java
+C:\Users\Andrew\Documents\INSOFT_SUAP\vista\src\main\java\mx\desarrollo\helper\ProfesorHelper.java
+C:\Users\Andrew\Documents\INSOFT_SUAP\vista\src\main\java\mx\desarrollo\beanUI\ProfesorBeanUI.java
+>>>>>>> d2ed6ea74b6b2568c40961754618cbbbb7c215af
