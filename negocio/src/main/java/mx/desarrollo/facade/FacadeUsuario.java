@@ -8,10 +8,7 @@ package mx.desarrollo.facade;
 import mx.desarrollo.delegate.DelegateUsuario;
 import mx.desarrollo.entidad.Usuario;
 
-/**
- *
- * @author EduardoCardona <>
- */
+
 public class FacadeUsuario {
     
     private final DelegateUsuario delegateUsuario;

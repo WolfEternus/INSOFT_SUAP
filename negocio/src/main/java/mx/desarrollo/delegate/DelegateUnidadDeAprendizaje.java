@@ -9,10 +9,7 @@ import java.util.List;
 import mx.desarrollo.entidad.UnidadDeAprendizaje;
 import mx.desarrollo.integracion.ServiceLocator;
 
-/**
- *
- * @author EduardoCardona <>
- */
+
 public class DelegateUnidadDeAprendizaje {
     
     /**

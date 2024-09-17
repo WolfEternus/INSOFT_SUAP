@@ -5,6 +5,7 @@
  */
 package mx.desarrollo.beanUI;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -18,17 +19,17 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import mx.desarrollo.entidad.Profesor;
 import mx.desarrollo.entidad.UnidadDeAprendizaje;
+import static mx.desarrollo.entidad.UnidadDeAprendizaje_.horasClase;
+import static mx.desarrollo.entidad.UnidadDeAprendizaje_.horasLaboratorio;
+import static mx.desarrollo.entidad.UnidadDeAprendizaje_.horasTaller;
 import mx.desarrollo.helper.ProfesorHelper;
 import mx.desarrollo.helper.UnidadHelper;
 
-/**
- *
- * @author riky3
- */
+
 @ManagedBean(name = "UnidadUI")
 @SessionScoped
 @ViewScoped
-public class UnidadUI {
+public class UnidadUI implements Serializable {
     public  List<Profesor> listaprofesor;
     public Profesor prof;
     public  List<UnidadDeAprendizaje> listaunidad;
@@ -115,7 +116,7 @@ public class UnidadUI {
     }
     
     public void guardarProfesor() {
-       profesorhelper.guardarProfesor(prof);
+       profesorhelper.saveProfesor(prof);
        obtenerProfesDeBD();
     }
     

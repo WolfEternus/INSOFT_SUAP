@@ -13,10 +13,7 @@ import mx.desarrollo.entidad.Profesor;
 import mx.desarrollo.entidad.UnidadDeAprendizaje;
 import mx.desarrollo.integracion.ServiceFacadeLocator;
 
-/**
- *
- * @author Viann
- */
+
 public class UnidadHelper {
 
     public List<UnidadDeAprendizaje> obtenerUnidades() {

@@ -9,10 +9,7 @@ import mx.desarrollo.facade.FacadeProfesor;
 import mx.desarrollo.facade.FacadeUsuario;
 import mx.desarrollo.facade.FacadeUnidadDeAprendizaje;
 
-/**
- *
- * @author EduardoCardona <>
- */
+
 public class ServiceFacadeLocator {
     
     private static FacadeProfesor facadeProfesor;
