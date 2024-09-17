@@ -33,31 +33,29 @@ and open the template in the editor.
         </p:toolbar>
         
         
+        
+        
         <h:form id="dialogs">
     <p:dialog header="Registrar nueva unidad de aprendizaje" showEffect="fade" modal="true" widgetVar="manageProductDialog"
         responsive="true">
         <p:outputPanel id="manage-product-content" class="ui-fluid">
-            <div class="field"> 
-                <p:outputLabel>Id</p:outputLabel>
-                <p:inputNumber id="ID" value="#{UnidadUI.unidad.idUnidadAprendizaje}" required="true" style="text-transform:uppercase;" />
-            </div>
             <div class="field">
                 <p:outputLabel >Nombre</p:outputLabel>
-                <p:inputText id="nom" value="#{UnidadUI.unidad.nombre}" required="true" style="text-transform:uppercase;" />
+                <p:inputText id="nom" value="#{UnidadUI.unidad.nombre}" required="false" style="text-transform:uppercase;" />
             </div>
             <div class="field">
                 <p:outputLabel >Horas clase</p:outputLabel>
-                <p:inputNumber id="HC" value="#{UnidadUI.unidad.horasClase}" required="true" decimalPlaces="0"/>
+                <p:inputNumber id="HC" value="#{UnidadUI.unidad.horasClase}" required="false" decimalPlaces="0"/>
             </div>
             
             <div class="field">
                 <p:outputLabel >Horas taller</p:outputLabel>
-                <p:inputNumber id="HT" value="#{UnidadUI.unidad.horasTaller}" required="true" decimalPlaces="0"/>
+                <p:inputNumber id="HT" value="#{UnidadUI.unidad.horasTaller}" required="false" decimalPlaces="0"/>
             </div>
             
             <div class="field">
                 <p:outputLabel >Horas laboratorio</p:outputLabel>
-                <p:inputNumber id="HL" value="#{UnidadUI.unidad.horasLaboratorio}" required="true" decimalPlaces="0"/>
+                <p:inputNumber id="HL" value="#{UnidadUI.unidad.horasLaboratorio}" required="false" decimalPlaces="0"/>
             </div>
         </p:outputPanel>
         
@@ -69,13 +67,8 @@ and open the template in the editor.
                 class="ui-button-secondary" type="button" />
         </f:facet>
     </p:dialog>
+            
 
-
-                    <p:confirmDialog global="true" showEffect="fade" width="300">
-                        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="pi pi-check" />
-                        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no ui-button-secondary"
-                            icon="pi pi-times" />
-                    </p:confirmDialog>
             
             <p:dialog header="PROFESOR" showEffect="fade" modal="true" widgetVar="manageProductDialogP"
             responsive="true">
@@ -83,15 +76,15 @@ and open the template in the editor.
                  <p:outputPanel>
                     <div class="field">
                         <p:outputLabel >Nombre</p:outputLabel>
-                        <p:inputText id="name" value="#{profesorUI.prof.nombre}" required="true" style="text-transform:uppercase;"/>
+                        <p:inputText id="name" value="#{profesorUI.prof.nombre}" required="false" style="text-transform:uppercase;"/>
                     </div>
                     <div class="field"> 
                         <p:outputLabel>Apellidos</p:outputLabel>
-                        <p:inputText id="ap" value="#{profesorUI.prof.apellido}" required="true" style="text-transform:uppercase;" />
+                        <p:inputText id="ap" value="#{profesorUI.prof.apellido}" required="false" style="text-transform:uppercase;" />
                     </div>
                     <div class="field">
                         <p:outputLabel >RFC</p:outputLabel>
-                        <p:inputText id="rfc" maxlength="13" value="#{profesorUI.prof.rfc}" required="true" style="text-transform:uppercase;"/>
+                        <p:inputText id="rfc" maxlength="13" value="#{profesorUI.prof.rfc}" required="false" style="text-transform:uppercase;"/>
                     </div>
                      
                      <div class="card">
