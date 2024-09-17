@@ -9,10 +9,7 @@ import java.util.List;
 import mx.desarrollo.delegate.DelegateUnidadDeAprendizaje;
 import mx.desarrollo.entidad.UnidadDeAprendizaje;
 
-/**
- *
- * @author EduardoCardona <>
- */
+
 public class FacadeUnidadDeAprendizaje {
     
     private final DelegateUnidadDeAprendizaje delegateUnidadDeAprendizaje;

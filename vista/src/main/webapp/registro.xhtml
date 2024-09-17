@@ -22,6 +22,11 @@ and open the template in the editor.
                     styleClass="ui-button-success" style="margin-right: .5rem">
                     <p:resetInput target=":dialogs:manage-product-content" />
                 </p:commandButton>
+                <p:commandButton value="Registrar Nueva de Unidad de Aprendizaje" actionListener="#{UnidadUI.openNewU()}" icon="pi pi-plus"
+                                update=":dialogs:manage-product-content-ua" oncomplete="PF('manageProductDialogUA').show()"
+                                styleClass="ui-button-success" style="margin-right: .5rem">
+                                <p:resetInput target=":dialogs:manage-product-content-ua" />
+                            </p:commandButton>
 
             </p:toolbarGroup>
         </p:toolbar>
@@ -58,6 +63,52 @@ and open the template in the editor.
                     update="manage-product-content" process="manage-product-content @this" class="ui-button-secondary" type="button" />
             </f:facet>
         </p:dialog>
+            
+            
+            <!-- Registro de unidad de aprendizaje -->
+            
+            <p:dialog header="Registrar nueva unidad de aprendizaje" showEffect="fade" modal="true" widgetVar="manageProductDialogUA"
+        responsive="true">
+        <p:outputPanel id="manage-product-content-ua" class="ui-fluid">
+            <div class="field"> 
+                <p:outputLabel>Id</p:outputLabel>
+                <p:inputNumber id="ID" value="#{UnidadUI.unidad.idUnidadAprendizaje}" required="true" style="text-transform:uppercase;" />
+            </div>
+            <div class="field">
+                <p:outputLabel >Nombre</p:outputLabel>
+                <p:inputText id="nom" value="#{UnidadUI.unidad.nombre}" required="true" style="text-transform:uppercase;" />
+            </div>
+            <div class="field">
+                <p:outputLabel >Horas clase</p:outputLabel>
+                <p:inputNumber id="HC" value="#{UnidadUI.unidad.horasClase}" required="true" decimalPlaces="0"/>
+            </div>
+            
+            <div class="field">
+                <p:outputLabel >Horas taller</p:outputLabel>
+                <p:inputNumber id="HT" value="#{UnidadUI.unidad.horasTaller}" required="true" decimalPlaces="0"/>
+            </div>
+            
+            <div class="field">
+                <p:outputLabel >Horas laboratorio</p:outputLabel>
+                <p:inputNumber id="HL" value="#{UnidadUI.unidad.horasLaboratorio}" required="true" decimalPlaces="0"/>
+            </div>
+        </p:outputPanel>
+        
+        <f:facet name="footer">
+            <!-- Botón de Guardar con evento Ajax para procesar la información ingresada -->
+            <p:commandButton value="Guardar" actionListener="#{UnidadUI.guardarUnidadaprendizaje()}"
+                update="manage-product-content-ua" process="manage-product-content-ua @this" onclick="PF('dtunidad').show()" />
+            <p:commandButton value="Cancelar" icon="pi pi-times" onclick="PF('manageProductDialogUA').hide()"
+                class="ui-button-secondary" type="button" />
+        </f:facet>
+    </p:dialog>
+
+
+                    <p:confirmDialog global="true" showEffect="fade" width="300">
+                        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="pi pi-check" />
+                        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no ui-button-secondary"
+                            icon="pi pi-times" />
+                    </p:confirmDialog>
           
 
     </h:form>

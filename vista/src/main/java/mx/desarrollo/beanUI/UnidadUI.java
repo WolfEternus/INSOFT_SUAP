@@ -5,6 +5,7 @@
  */
 package mx.desarrollo.beanUI;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -24,14 +25,11 @@ import static mx.desarrollo.entidad.UnidadDeAprendizaje_.horasTaller;
 import mx.desarrollo.helper.ProfesorHelper;
 import mx.desarrollo.helper.UnidadHelper;
 
-/**
- *
- * @author riky3
- */
+
 @ManagedBean(name = "UnidadUI")
 @SessionScoped
 @ViewScoped
-public class UnidadUI {
+public class UnidadUI implements Serializable {
     public  List<Profesor> listaprofesor;
     public Profesor prof;
     public  List<UnidadDeAprendizaje> listaunidad;

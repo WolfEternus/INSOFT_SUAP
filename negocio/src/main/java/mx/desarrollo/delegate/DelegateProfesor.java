@@ -9,10 +9,7 @@ import java.util.List;
 import mx.desarrollo.entidad.Profesor;
 import mx.desarrollo.integracion.ServiceLocator;
 
-/**
- *
- * @author EduardoCardona <>
- */
+
 public class DelegateProfesor {
     
     /**
