@@ -28,7 +28,7 @@ public class ProfesorHelper implements Serializable{
         return ServiceFacadeLocator.getInstanceFacadeProfesor().obtenerProfesores();
     }
     
-    public void guardarProfesor(Profesor profesor){
+    public void saveProfesor(Profesor profesor){
         
         ArrayList<Profesor> listprof = (ArrayList<Profesor>) obtenerProfesores();
         Collections.sort(listprof, new Comparator<Profesor>(){

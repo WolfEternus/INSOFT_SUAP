@@ -9,10 +9,7 @@ import java.util.List;
 import mx.desarrollo.delegate.DelegateProfesor;
 import mx.desarrollo.entidad.Profesor;
 
-/**
- *
- * @author EduardoCardona <>
- */
+
 public class FacadeProfesor {
     
     private final DelegateProfesor delegateProfesor;

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <body>
+        <p:toolbar>
+            <p:toolbarGroup>
+                <p:commandButton value="Registrar Nueva de Unidad de Aprendizaje" actionListener="#{UnidadUI.openNewU()}" icon="pi pi-plus"
+                    update=":dialogs:manage-product-content" oncomplete="PF('manageProductDialog').show()"
+                    styleClass="ui-button-success" style="margin-right: .5rem">
+                    <p:resetInput target=":dialogs:manage-product-content" />
+                </p:commandButton>
+                <p:commandButton value="Registrar Nuevo Profesor" actionListener="#{profesorUI.prof()}"
+                    update=":dialogs:manage-product-content-p" oncomplete="PF('manageProductDialogP').show()"
+                    styleClass="ui-button-success" style="margin-right: .5rem">
+                    <p:resetInput target=":dialogs:manage-product-content-p" />
+                </p:commandButton>
+                            
+            </p:toolbarGroup>
+
+        </p:toolbar>
+        
+        <p:dataTable id="dt-profesores" widgetVar="dtProfesores" var="profesor" value="#{profesorUI.listaprofesor}"
+                     reflow="true" styleClass="products-table" emptyMessage="No hay registros de profesores"
+            rowKey="#{profesor.idProfesor}" paginator="true" rows="10" rowSelectMode="add" paginatorPosition="bottom">
+            <f:facet name="header">
+                <div class="products-table-header">
+                    <span style="font-weight: bold">PROFESORES</span>
+                    <span class="filter-container ui-input-icon-left"> <i class="pi pi-search"></i>
+                        <p:inputText id="globalFilter" onkeyup="PF('dtProfesores').filter()" placeholder="Buscar"/>
+                    </span>
+                </div>
+            </f:facet>
+            <div class="columnas">
+                <p:column headerText="id" >
+                <h:outputText value="#{profesor.idProfesor}" />
+            </p:column>
+            <p:column headerText="Apellidos">
+                <h:outputText value="#{profesor.apellido}" style="text-transform:uppercase;"/>
+            </p:column>
+
+
+                <p:column headerText="Nombre" sortBy="#{profesor.nombre}">
+                <h:outputText value="#{profesor.nombre}"  style="text-transform:uppercase;"/>
+            </p:column>
+
+            <p:column headerText="RFC">
+                <h:outputText value="#{profesor.rfc}" style="text-transform:uppercase;"/>
+            </p:column>
+                
+                <p:column>
+                <p:commandButton icon="pi pi-pencil" update=":dialogs:manage-product-content-p"
+                    oncomplete="PF('manageProductDialogP').show()"
+                    styleClass="edit-button rounded-button ui-button-success" style="text-align: center" process="@this">
+                    <f:setPropertyActionListener value="#{profesor}" target="#{profesorUI.prof}" />
+                    <p:resetInput target=":dialogs:manage-product-content" />
+                </p:commandButton>
+                <p:commandButton class="ui-button-warning rounded-button" icon="pi pi-trash"
+                                 process="@this"
+                                 oncomplete="PF('deleteProductDialog').show()">
+                    <f:setPropertyActionListener value="#{profesor}" target="#{profesorUI.prof}" />
+                </p:commandButton>
+            </p:column>
+
+            </div>
+        </p:dataTable>
+        
+        
+        <h:form id="dialogs">
+    <p:dialog header="Registrar nueva unidad de aprendizaje" showEffect="fade" modal="true" widgetVar="manageProductDialog"
+        responsive="true">
+        <p:outputPanel id="manage-product-content" class="ui-fluid">
+            <div class="field">
+                <p:outputLabel >Nombre</p:outputLabel>
+                <p:inputText id="nom" value="#{UnidadUI.unidad.nombre}" required="false" style="text-transform:uppercase;" />
+            </div>
+            <div class="field">
+                <p:outputLabel >Horas clase</p:outputLabel>
+                <p:inputNumber id="HC" value="#{UnidadUI.unidad.horasClase}" required="false" decimalPlaces="0"/>
+            </div>
+            
+            <div class="field">
+                <p:outputLabel >Horas taller</p:outputLabel>
+                <p:inputNumber id="HT" value="#{UnidadUI.unidad.horasTaller}" required="false" decimalPlaces="0"/>
+            </div>
+            
+            <div class="field">
+                <p:outputLabel >Horas laboratorio</p:outputLabel>
+                <p:inputNumber id="HL" value="#{UnidadUI.unidad.horasLaboratorio}" required="false" decimalPlaces="0"/>
+            </div>
+        </p:outputPanel>
+        
+        <f:facet name="footer">
+            <!-- Botón de Guardar con evento Ajax para procesar la información ingresada -->
+            <p:commandButton value="Guardar" actionListener="#{UnidadUI.guardarUnidadaprendizaje()}"
+                update="manage-product-content" process="manage-product-content @this" onclick="PF('dtunidad').show()" />
+            <p:commandButton value="Cancelar" icon="pi pi-times" onclick="PF('manageProductDialog').hide()"
+                class="ui-button-secondary" type="button" />
+        </f:facet>
+    </p:dialog>
+            
+
+            
+            <p:dialog header="PROFESOR" showEffect="fade" modal="true" widgetVar="manageProductDialogP"
+            responsive="true">
+            <p:outputPanel id="manage-product-content-p" class="ui-fluid">
+                 <p:outputPanel>
+                    <div class="field">
+                        <p:outputLabel >Nombre</p:outputLabel>
+                        <p:inputText id="name" value="#{profesorUI.prof.nombre}" required="false" style="text-transform:uppercase;"/>
+                    </div>
+                    <div class="field"> 
+                        <p:outputLabel>Apellidos</p:outputLabel>
+                        <p:inputText id="ap" value="#{profesorUI.prof.apellido}" required="false" style="text-transform:uppercase;" />
+                    </div>
+                    <div class="field">
+                        <p:outputLabel >RFC</p:outputLabel>
+                        <p:inputText id="rfc" maxlength="13" value="#{profesorUI.prof.rfc}" required="false" style="text-transform:uppercase;"/>
+                    </div>
+                     
+                     <div class="card">
+
+            </div>
+                                 
+                </p:outputPanel>
+            </p:outputPanel>
+
+            <f:facet name="footer">
+                <p:commandButton value="Guardar informacion" actionListener="#{profesorUI.saveProfesor()}"
+                    update="manage-product-content-p" process="manage-product-content-p @this" onclick="PF('dtProfesores').show()" />
+                <p:commandButton value="Cancelar" onclick="PF('manageProductDialogP').hide()"
+                    update="manage-product-content-p" process="manage-product-content-p @this" class="ui-button-secondary" type="button" />
+            </f:facet>
+        </p:dialog>
+                </h:form>
+    </body>
+</html>

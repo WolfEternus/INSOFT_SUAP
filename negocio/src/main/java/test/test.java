@@ -15,7 +15,7 @@ import mx.desarrollo.integracion.ServiceFacadeLocator;
  */
 public class test {
     public static void main(String[] args) {
-        Profesor profesor = new Profesor(2, "Alonso", "Ruiz de Chavez", "QWER123456RFC");
+        Profesor profesor = new Profesor(2, "Alfonso", "Marquez de Marquez", "QPEL123456RFC");
         ServiceFacadeLocator.getInstanceFacadeProfesor().saveProfesor(profesor);
         System.out.println("registro exitoso de: " + profesor);
     }
